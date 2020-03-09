@@ -1,0 +1,7 @@
+﻿CREATE PROC [dbo].[FI_SP_VerificaCliente]
+	@CPF VARCHAR(14),
+	@ID	 BIGINT
+AS
+BEGIN
+	SELECT 1 FROM CLIENTES WHERE REPLACE(REPLACE(CPF, '.', ''), '-', '') = @CPF AND ID != @ID
+END

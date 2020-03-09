@@ -1,0 +1,21 @@
+﻿<div class="row">
+    <div class="col-md-4">
+        <div class="form-group">
+            <label for="Nome">Nome:</label>
+            <input required="required" type="text" class="form-control" id="Nome" name="Nome" placeholder="Ex.: João da Silva" maxlength="255">
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="form-group">
+            <label for="CPF">CPF:</label>
+            <input required="required" type="text" class="form-control" id="CPF" name="CPF" placeholder="Ex.: 999.999.999-99" maxlength="14">
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div>
+            <br />
+            <!--TODO: Salvar no GridView-->
+            @Html.ActionLink("Incluir", "Incluir", "Beneficiario", new { }, new { @class = "btn btn-sm btn-success" })
+        </div>
+    </div>
+</div>

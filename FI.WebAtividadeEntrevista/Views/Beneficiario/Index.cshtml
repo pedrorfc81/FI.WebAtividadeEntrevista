@@ -1,0 +1,25 @@
+﻿@{
+    //TODO: Manter dados somente no GridView, e enviar de volta para Cliente
+    ViewBag.Title = "Beneficiários";
+}
+@section scripts{
+    <script>
+        var urlAlteracao = '@Url.Action("Alterar", "Beneficiario", new { area = ""})';
+        //TODO: Pegar valor dinâmico, tirar 23
+        var urlBeneficiarioList = '@Url.Action("BeneficiarioList", "Beneficiario", new { idCliente = 23 })';
+    </script>
+    @Scripts.Render("~/bundles/listBeneficiarios")
+}
+<div class="modal-dialog">
+    <h2>@Html.Raw(ViewBag.Title)</h2>
+    @Html.Partial("Forms")
+    <!--TODO: Alterar para gridview, para não carregar classe jtable-->
+    <table id="gridBeneficiarios" class="table"></table>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="pull-right">
+                <button type="submit" class="btn btn-sm btn-default" data-dismiss="modal">Fechar</button>
+            </div>
+        </div>
+    </div>
+</div>
